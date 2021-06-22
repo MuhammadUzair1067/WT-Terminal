@@ -19,7 +19,7 @@ router.get("/products/add", checkSessionAuth, async function (req, res, next) {
   res.render("products/add");
 });
 // store data in db
-router.post("/products/delete/", async function (req, res, next) {
+router.post("/products/add/", async function (req, res, next) {
   let product = new Product(req.body);
   await product.save();
   res.redirect("/");
