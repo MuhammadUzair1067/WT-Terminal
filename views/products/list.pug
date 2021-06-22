@@ -21,9 +21,9 @@ block content
                     td=product.price
                     td=product.description
                     td
-                        a(href="/products/cart/"+product._id, class="btn btn-danger") Add to Cart
+                        a(href="/products/delete/"+product._id, class="btn btn-danger") Delete Product
                         a(href="/products/edit/"+product._id, class="btn btn-warning") Edit Product
-                        a(href="/products/delete/"+product._id, class="btn btn-info") Delete Product
+                        a(href="/products/cart/"+product._id, class="btn btn-info") Add to Cart
                     td
                         if product.rating > 0
                             span(class="fa fa-star checked")
