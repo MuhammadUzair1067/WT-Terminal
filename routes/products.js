@@ -6,7 +6,7 @@ var checkSessionAuth = require("../middlewares/checkSessionAuth");
 router.get("/", async function (req, res, next) {
   let products = await Product.find();
   console.log(req.session.user);
-  res.render("products/list", { title: "Products In DB", products });
+  res.render("products/list", { title: "Products List", products });
 });
 
 router.get("/cart", function (req, res, next) {
@@ -19,12 +19,12 @@ router.get("/products/add", checkSessionAuth, async function (req, res, next) {
   res.render("products/add");
 });
 // store data in db
-router.post("/products/add", async function (req, res, next) {
+router.post("/products/delete/", async function (req, res, next) {
   let product = new Product(req.body);
   await product.save();
   res.redirect("/");
 });
-router.get("/products/delete/:id", async function (req, res, next) {
+router.get("/products/delete///:id", async function (req, res, next) {
   let product = await Product.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });

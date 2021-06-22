@@ -11,15 +11,15 @@ block content
             tr
                 th Name
                 th Price
-                th Discription
+                th Description
                 th Actions
-                th rating
+                th Rating
         tbody
             each product in products
                 tr
                     td=product.name
                     td=product.price
-                    td=product.discription
+                    td=product.description
                     td
                         a(href="/products/delete/"+product._id, class="btn btn-danger") Delete
                         a(href="/products/edit/"+product._id, class="btn btn-warning") Edit
